@@ -2,36 +2,36 @@ from GrappinAlgo import *
 
 makeExercice(
 
-    # position de départ.
-    '╔════════════════╗\n' +
-    '║^               ║\n' +
-    '║                ║\n' +
-    '║                ║\n' +
-    '║   #            ║\n' +
-    '╚════════════════╝',
+    # tableau de départ.
+    '╔════════╗\n' +
+    '║   ^    ║\n' +
+    '║        ║\n' +
+    '║        ║\n' +
+    '║   #    ║\n' +
+    '╚════════╝',
 
-    # position d'arrivée.
-    '╔════════════════╗\n' +
-    '║^               ║\n' +
-    '║                ║\n' +
-    '║                ║\n' +
-    '║            #   ║\n' +
-    '╚════════════════╝'
+    # tableau attendu.
+    '╔════════╗\n' +
+    '║        ║\n' +
+    '║        ║\n' +
+    '║        ║\n' +
+    '║     #  ║\n' +
+    '╚════════╝'
 )
 
 # ------> ton code ci-dessous. ▼ ▼ ▼
 
 
-for _ in range(3):
-    droite()
-prendre()
-for _ in range(9):
-    droite()
-poser()
+prendre()  # demande au grappin de déssendre pour prendre un block.
+droite()  # déplace le grappin sur la droite.
+droite()
+poser()  # demande au grappin de poser le block qu'il porte.
 
 
 # ------> ton code ci-dessus. ▲ ▲ ▲
 
 
 checkIsExerciceSuccess()
+
+# ecrit "python3 main.py" dans le terminal pour lancer ton code.
 

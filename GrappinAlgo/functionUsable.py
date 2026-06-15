@@ -132,6 +132,15 @@ def poser():
         map.drawUpdate()
 
 
+def blockTenu() -> str:
+    """
+    Retourn le block tenu par le grappin (si le grappin n'en porte pas, il retourn du vide).
+    """
+    map = Map()
+    if map.is_error_find:
+        return ''
+    
+    return '' if not map.grappin.is_take_something else map.grappin.block_taken.sprite
 
 
 
