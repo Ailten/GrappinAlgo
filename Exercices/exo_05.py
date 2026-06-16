@@ -6,10 +6,10 @@ makeExercice(
     '╔═══════╗\n' +
     '║   ^   ║\n' +
     '║       ║\n' +
-    '║   #   ║\n' +
+    '║   X   ║\n' +
     '║   O   ║\n' +
     '║   O   ║\n' +
-    '║   #   ║\n' +
+    '║   X   ║\n' +
     '╚═══════╝',
 
     # tableau attendu.
@@ -27,8 +27,11 @@ makeExercice(
 
 # place les rond a gauche du tablau, et les croix a droite.
 
-# pour cela, tu aura besoin du "if" (si) et de function "blockTenu()" (qui retourn le block que le grappin porte).
+# pour cela, tu aura besoin du "if" (si) et de fonction "blockTenu()" (qui retourn le block que le grappin porte).
 
+# example :
+# if blockTenu() == 'X':    # va a droite, seulement si le block tenu est une crois.
+#     droite()
 
 # ------> solution ci-dessous.
 

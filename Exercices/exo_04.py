@@ -30,7 +30,6 @@ makeExercice(
 # tu va devoir prendre et déposer 3 fois pour chaque colonne.
 # une boucle devrais aider pour cela aussi.
 
-# pour cela tu aura besoin d'une boucle "for".
 
 # ------> solution ci-dessous.
 

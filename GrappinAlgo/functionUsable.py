@@ -5,8 +5,6 @@ def droite():
     Fait avencer le grappin d'un vers la droite.
     """
     map = Map()
-    if map.is_error_find:
-        return
     
     # move to right.
     map.grappin.x += 1
@@ -17,6 +15,7 @@ def droite():
     # check error.
     if map.checkError('grappin_out_of_range'):
         print(map.error_message)
+        raise Exception(map.error_message)
 
 
 def gauche():
@@ -24,8 +23,6 @@ def gauche():
     Fait avencer le grappin d'un vers la gauche.
     """
     map = Map()
-    if map.is_error_find:
-        return
     
     # move to right.
     map.grappin.x -= 1
@@ -36,6 +33,7 @@ def gauche():
     # check error.
     if map.checkError('grappin_out_of_range'):
         print(map.error_message)
+        raise Exception(map.error_message)
 
 
 def prendre():
@@ -43,13 +41,11 @@ def prendre():
     Fait prendre un block par le grappin.
     """
     map = Map()
-    if map.is_error_find:
-        return
     
     # check if grappin is free.
     if map.checkError('grappin_is_full'):
         print(map.error_message)
-        return
+        raise Exception(map.error_message)
 
     # check if block in column grappin (throw before grappin fall).
     is_no_block = map.checkError('no_block_in_column_grappin')
@@ -63,7 +59,7 @@ def prendre():
             # error, no block to take.
             if is_no_block and y == map.height - 1:
                 print(map.error_message)
-                return
+                raise Exception(map.error_message)
         
         else:
 
@@ -94,18 +90,16 @@ def poser():
     Fait poser le block que tien le grappin.
     """
     map = Map()
-    if map.is_error_find:
-        return
     
     # check if grappin is full.
     if map.checkError('grappin_is_empty'):
         print(map.error_message)
-        return
+        raise Exception(map.error_message)
     
     # check if column is full.
     if map.checkError('column_is_full'):
         print(map.error_message)
-        return
+        raise Exception(map.error_message)
     
     # eval pos y of grappin should be end fall (an place block).
     blocks_in_column = [ b for b in map.blocks if b.x == map.grappin.x ]
@@ -137,12 +131,32 @@ def blockTenu() -> str:
     Retourn le block tenu par le grappin (si le grappin n'en porte pas, il retourn du vide).
     """
     map = Map()
-    if map.is_error_find:
-        return ''
     
     return '' if not map.grappin.is_take_something else map.grappin.block_taken.sprite
 
 
+def hauteurColonne() -> int:
+    """
+    Retourn la hauteur de la colonne (les block empilé).
+    """
+    map = Map()
+
+    # get max height of column.
+    blocks_height = [ b.y for b in map.blocks if b.x == map.grappin.x ]
+    blocks_height.sort(reverse=True)
+    max_height = 0 if len(blocks_height) == 0 else blocks_height[0]
+    return max_height
+
+
+def positionDuGrappin() -> int:
+    """
+    Retourn la position du grappin dans le tableau (horizontalement).
+    """
+    map = Map()
+
+    return map.grappin.x + 1
+    
+    
 
     
 

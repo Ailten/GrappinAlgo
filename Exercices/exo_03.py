@@ -30,7 +30,11 @@ makeExercice(
 # sais tu que tu peu placer une première boucle dans une seconde ?
 # n'oublie pas que le grappin doit faire le retour.
 
-# pour cela tu aura besoin d'une boucle "for".
+# example :
+# for _ in range(2):       # répéter 2 fois la suite d'action ...
+#     for _ in range(2):   # ... aller 2 fois a droite.
+#         droite()         
+
 
 # ------> solution ci-dessous.
 

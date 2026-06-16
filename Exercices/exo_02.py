@@ -30,6 +30,11 @@ makeExercice(
 
 # pour cela tu aura besoin d'une boucle "for".
 # (for permet de dire "répète une suite d'instruction N fois")
+# la suite d'instruction est représentée par les espaces laissé a gauche des lignes qui suivent la ligne "for".
+
+# example :
+# for _ in range(3):   # aller 3 fois a droite.
+#     droite()
 
 
 # ------> solution ci-dessous.
