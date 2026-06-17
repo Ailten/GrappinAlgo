@@ -7,7 +7,7 @@ makeExercice(
     '║^        ║\n' +
     '║         ║\n' +
     '║         ║\n' +
-    '║        X║\n' +
+    '║ X  XX  X║\n' +
     '╚═════════╝',
 
     # tableau attendu.
@@ -15,23 +15,21 @@ makeExercice(
     '║         ║\n' +
     '║         ║\n' +
     '║         ║\n' +
-    '║X        ║\n' +
+    '║X  XX  X ║\n' +
     '╚═════════╝'
 )
 
 
 # ------> Enoncé :
 
-# ramener la crois a gauche.
+# décale les crois a gauche.
 
-# utilise "while" et "positionDuGrappin()".
+# parcourt le tableau de gauche a droite, a chaque colonne vérifie si il y a un block, et déplace le a gauche.
+# pour cela tu peu utiliser "if" et "hauteurColonne()".
 
-# "positionDuGrappin()" est une fonction qui retourn le numero de la colonne ou le grappin ce trouve.
-
-# "while" fonctionne comme "for", sauf qu'il répète tant qu'une condition n'est plus respectée.
 # example :
-# while positionDuGrappin() != 9:    # répète tant que le grappin n'est pas sur la colonne 9 ...
-#     droite()                       # ... continue d'aller a droite.
+# if hauteurColonne() == 1:    # si la colonne contien un block ...
+#     prendre()                # ... prend le.
 
 
 # ------> solution ci-dessous.
@@ -63,9 +61,9 @@ makeExercice(
 while positionDuGrappin() != 9:    # répète tant que le grappin n'est pas sur la colonne 9 ...
     droite()                       # ... aller a droite.
 
-prendre()
+    if hauteurColonne() == 1:      # si la colonne contien un block ...
 
-while positionDuGrappin() != 1:    # répète tant que le grappin n'est pas sur la colonne 1 ...
-    gauche()                       # ... aller a gauche.
-
-poser()
+        prendre()                  # ... décale le a gauche.
+        gauche()
+        poser()
+        droite()
